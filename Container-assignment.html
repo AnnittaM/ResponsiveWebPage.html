@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherSite</title>
+
+    <style>
+      h1 {
+        color: rgb(46, 30, 196);
+        font-size: 38px;
+        font-weight: 100;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+      }
+      h2 {
+        color: blue;
+        font-size: 30px;
+        font-weight: 100;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+      }
+      button {
+        color: rgb(6, 6, 175);
+        border-radius: 30px;
+        padding: 15px 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        border: 1px solid blueviolet;
+        transition: all 200ms ease-in-out;
+        display: block;
+      }
+      button:hover {
+        color: rgb(3, 3, 175);
+        background-color: #ffffff;
+        cursor: pointer;
+      }
+      li {
+        list-style: none;
+        text-align: center;
+        color: #0c0c0c;
+        background-color: #ffffff;
+        cursor: pointer;
+        padding: 10px 0;
+        margin: 0;
+      }
+      ul {
+        padding: 0;
+      }
+
+      li:hover {
+        background-color: salmon;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌤️</h1>
+    <h2>
+      Currently 21 ° In Valencia, Spain <br />
+      13 °/<strong>23 °</strong>
+    </h2>
+    <li>
+      🌧️Tomorrow <br />
+      <p>10°/<strong>22°</strong></p>
+    </li>
+    <li>
+      ☁️ Saturday <br />
+      <p>12°/<strong>15°</strong></p>
+    </li>
+    <li>
+      ☀️ Sunday <br />
+      <p>19°/<strong>26°</strong></p>
+    </li>
+    <p>
+      <button>Change City</button>
+    </p>
+
+    <p>Coded By Annitta Musendo</p>
+    <script>
+      let changeCityButton = document.querySelector("Button");
+      changeCityButton.addEventListener("click", changeCity);
+      function changeCity() {
+        let changeCity = prompt("what city would you like to insert?");
+        let temperature = prompt(
+          "What is the current temperature of your city?"
+        );
+
+        if (temperature <= 1) {
+          let heading = document.querySelector("h2");
+          heading.innerHTML =
+            " 😢 <br/> Currently in" + changeCity + temperature + "°C";
+        } else {
+          heading.innerHTML =
+            "😄<br/> Currently in" + changeCity + temperature + "°C";
+        }
+      }
+      let changeButton = document.querySelector("Button");
+      changeCityButton.addEventListener("click", changeCity);
+    </script>
+  </body>
+</html>
